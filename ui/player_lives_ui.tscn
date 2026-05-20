@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://dbhb2qjyb57od"]
+
+[ext_resource type="Script" uid="uid://cjt3u880bf1km" path="res://ui/player_lives_ui.gd" id="1_cqtu6"]
+[ext_resource type="PackedScene" uid="uid://50yllxblcd4f" path="res://ui/life_icon.tscn" id="2_cqtu6"]
+
+[node name="PlayerLivesUi" type="Control" unique_id=1416189025]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cqtu6")
+life_icon_scene = ExtResource("2_cqtu6")
+
+[node name="LivesContainer" type="HBoxContainer" parent="." unique_id=295729024]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 16.0
+
+[node name="LifeIcon" parent="LivesContainer" unique_id=1023795603 instance=ExtResource("2_cqtu6")]
+layout_mode = 2
+
+[node name="LifeIcon2" parent="LivesContainer" unique_id=1596594241 instance=ExtResource("2_cqtu6")]
+layout_mode = 2
+
+[node name="LifeIcon3" parent="LivesContainer" unique_id=247646159 instance=ExtResource("2_cqtu6")]
+layout_mode = 2
+
+[node name="LifeIcon4" parent="LivesContainer" unique_id=124617633 instance=ExtResource("2_cqtu6")]
+layout_mode = 2

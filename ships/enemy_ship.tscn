@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://d0q5yohdykm3s"]
+
+[ext_resource type="Texture2D" uid="uid://bitqi6gtfg1y6" path="res://ships/assets/ship_0023.png" id="1_25v0y"]
+[ext_resource type="Script" uid="uid://l7tjarvsvm4s" path="res://ships/enemy_ship.gd" id="1_l3u2g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l3u2g"]
+size = Vector2(20, 10)
+
+[node name="EnemyShip" type="Node2D" unique_id=1770079735]
+script = ExtResource("1_l3u2g")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=29219859]
+texture = ExtResource("1_25v0y")
+flip_v = true
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=243882448]
+
+[node name="Hurtbox" type="Area2D" parent="." unique_id=273873885]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=1247172530]
+shape = SubResource("RectangleShape2D_l3u2g")
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]

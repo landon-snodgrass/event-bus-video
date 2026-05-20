@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://ddnd2b5ushj86"]
+
+[ext_resource type="Script" uid="uid://cuv8ovvlkn4qx" path="res://ships/player_character.gd" id="1_dp63o"]
+[ext_resource type="Texture2D" uid="uid://1qlev85bxn1w" path="res://ships/assets/ship_0000.png" id="1_mnme0"]
+[ext_resource type="PackedScene" uid="uid://b6s7wfsmtc3wk" path="res://bullets/bullet.tscn" id="2_gek2m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dp63o"]
+size = Vector2(28, 7)
+
+[node name="PlayerCharacter" type="CharacterBody2D" unique_id=1797686813]
+motion_mode = 1
+script = ExtResource("1_dp63o")
+bullet_scene = ExtResource("2_gek2m")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1996940066]
+texture = ExtResource("1_mnme0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1456228758]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_dp63o")
+
+[node name="BulletTimer" type="Timer" parent="." unique_id=807092472]
+wait_time = 0.5
+autostart = true
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=1353572202]
+position = Vector2(6, -12)
+
+[node name="Marker2D2" type="Marker2D" parent="." unique_id=2132896327]
+position = Vector2(-6, -12)
+
+[connection signal="timeout" from="BulletTimer" to="." method="_on_bullet_timer_timeout"]

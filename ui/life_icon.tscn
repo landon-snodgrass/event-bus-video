@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://50yllxblcd4f"]
+
+[ext_resource type="Texture2D" uid="uid://clcvw86w6kp3b" path="res://ui/assets/health-icon.png" id="1_hq3dn"]
+
+[node name="LifeIcon" type="TextureRect" unique_id=1023795603]
+texture = ExtResource("1_hq3dn")
+stretch_mode = 5

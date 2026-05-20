@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://b3rf54gtof1po"]
+
+[ext_resource type="PackedScene" uid="uid://defwp1yn4uevp" path="res://world/background_manager.tscn" id="1_ej4tk"]
+[ext_resource type="PackedScene" uid="uid://ddnd2b5ushj86" path="res://ships/player_character.tscn" id="1_n4psk"]
+[ext_resource type="Script" uid="uid://bemlwuylnnm34" path="res://managers/lives_manager.gd" id="3_cbffv"]
+[ext_resource type="PackedScene" uid="uid://bm2l627ajyms2" path="res://managers/enemy_spawner.tscn" id="3_oe8ih"]
+[ext_resource type="PackedScene" uid="uid://dbhb2qjyb57od" path="res://ui/player_lives_ui.tscn" id="5_smepj"]
+
+[node name="Gameplay" type="Node" unique_id=1032805411]
+
+[node name="EnemySpawner" parent="." unique_id=1176044292 instance=ExtResource("3_oe8ih")]
+
+[node name="LivesManager" type="Node" parent="." unique_id=519638182]
+script = ExtResource("3_cbffv")
+
+[node name="LevelBounds" type="StaticBody2D" parent="." unique_id=2090613539]
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="LevelBounds" unique_id=1378982725]
+polygon = PackedVector2Array(-8, -8, -8, 192, 328, 192, 328, -8, 0, -8, 0, 0, 320, 0, 320, 176, 0, 176, 0, -16, -8, -16)
+
+[node name="BackgroundManager" parent="." unique_id=1475211101 instance=ExtResource("1_ej4tk")]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=104149116]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0.45882353)
+
+[node name="PlayerCharacter" parent="." unique_id=1797686813 instance=ExtResource("1_n4psk")]
+position = Vector2(190, 156)
+
+[node name="PlayerLivesUi" parent="." unique_id=1416189025 instance=ExtResource("5_smepj")]
